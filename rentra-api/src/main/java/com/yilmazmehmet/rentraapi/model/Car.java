@@ -46,5 +46,8 @@ public class Car implements Serializable {
 	@Column(name = "car_type")
 	private String carType;
 	
+	@Column(name = "is_avaible")
+	private Boolean isAvaible;
+	
 	
 }

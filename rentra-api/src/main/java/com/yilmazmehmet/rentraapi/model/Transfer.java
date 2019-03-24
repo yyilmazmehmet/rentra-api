@@ -27,6 +27,7 @@ public class Transfer implements Serializable{
 
 	/**
 	 * 
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
@@ -62,12 +63,12 @@ public class Transfer implements Serializable{
 	
 	  
 	@ManyToOne(fetch=FetchType.LAZY,optional=false)
-	@JoinColumn(name="customer_id")
+	@JoinColumn(name="customer_id",nullable=false)
 	private Customer customer;
 	
 
 	@ManyToOne(fetch=FetchType.LAZY,optional=false)
-	@JoinColumn(name="car_id")
+	@JoinColumn(name="car_id",nullable=false)
 	private Car car;
 	
 

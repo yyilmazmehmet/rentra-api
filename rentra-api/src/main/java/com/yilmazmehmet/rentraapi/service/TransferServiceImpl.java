@@ -8,27 +8,22 @@ import com.yilmazmehmet.rentraapi.repository.TransferRepository;
 
 @Service
 public class TransferServiceImpl implements TransferService {
-	
+
 	private TransferRepository transferRepository;
-	
+
 	@Autowired
-	public TransferServiceImpl (TransferRepository transferRepository ) {
-		
+	public TransferServiceImpl(TransferRepository transferRepository) {
+
 		super();
-		this.transferRepository=transferRepository;
-		
+		this.transferRepository = transferRepository;
+
 	}
-	
-	
-	
 
 	@Override
 	public Transfer addTransfer(Transfer transfer) {
-	
-		Transfer addedTransfer=transferRepository.save(transfer);
-		
-		return addedTransfer;
-		
+
+		return transferRepository.save(transfer);
+
 	}
 
 }

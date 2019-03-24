@@ -19,8 +19,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 
-//@Entity
-//@Table(name="rent_a_car")
+@Entity
+@Table(name="rent_a_car")
 @Data
 public class RentACar implements Serializable {
 
@@ -32,7 +32,7 @@ public class RentACar implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String from ;
+	private String fromRent ;
 	
 	 
 	
@@ -53,14 +53,12 @@ public class RentACar implements Serializable {
 	
 	private String description;
 	
-	/*
 	@ManyToOne(fetch=FetchType.LAZY,optional=false)
-	@JoinColumn(name="customer_id",nullable=false)
+	@JoinColumn(name="customer_id")
 	private Customer customer;
 	
 
 	@ManyToOne(fetch=FetchType.LAZY,optional=false)
-	@JoinColumn(name="car_id",nullable=false)
+	@JoinColumn(name="car_id")
 	private Car car;
-*/
 }
