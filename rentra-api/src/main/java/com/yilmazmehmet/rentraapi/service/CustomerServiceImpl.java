@@ -1,6 +1,7 @@
 package com.yilmazmehmet.rentraapi.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +37,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public Customer updateCustomer(Customer customer) {
-		
+
 		return customerRepository.save(insertAdressAndPhoneToPerson(customer));
 	}
 
@@ -52,6 +53,20 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 
 		return customer;
+	}
+
+	@Override
+	public Optional<Customer> findCustomerById(Long id) {
+
+		return customerRepository.findById(id);
+	}
+
+	@Override
+	public Boolean deleteCustomer(Long id) {
+		
+		customerRepository.deleteById(id);
+		
+		return true;
 	}
 
 }
