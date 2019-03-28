@@ -21,11 +21,13 @@ import org.hibernate.annotations.NaturalId;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "users", uniqueConstraints = {
         @UniqueConstraint(columnNames = {
@@ -41,7 +43,7 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
+	 
 	@Size(min=3,max=50)
 	private String name;
 	
@@ -54,7 +56,7 @@ public class User {
 	private String password;
 	
 	@NaturalId
-    @NotBlank
+     
     @Size(max = 50)
     @Email
     private String email;
@@ -62,5 +64,12 @@ public class User {
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_roles",joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles= new HashSet<>();
+    
+    public User(String name, String username, String email, String password) {
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 
 }
