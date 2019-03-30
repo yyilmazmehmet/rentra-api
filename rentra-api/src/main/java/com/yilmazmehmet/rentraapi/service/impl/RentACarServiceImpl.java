@@ -1,10 +1,11 @@
-package com.yilmazmehmet.rentraapi.service;
+package com.yilmazmehmet.rentraapi.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yilmazmehmet.rentraapi.model.RentACar;
 import com.yilmazmehmet.rentraapi.repository.RentACarRepository;
+import com.yilmazmehmet.rentraapi.service.RentACarService;
 
 @Service
 public class RentACarServiceImpl implements RentACarService {

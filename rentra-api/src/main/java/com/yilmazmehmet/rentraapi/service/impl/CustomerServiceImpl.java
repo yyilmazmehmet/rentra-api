@@ -1,4 +1,4 @@
-package com.yilmazmehmet.rentraapi.service;
+package com.yilmazmehmet.rentraapi.service.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +10,7 @@ import com.yilmazmehmet.rentraapi.model.Address;
 import com.yilmazmehmet.rentraapi.model.Customer;
 import com.yilmazmehmet.rentraapi.model.Phone;
 import com.yilmazmehmet.rentraapi.repository.CustomerRepository;
+import com.yilmazmehmet.rentraapi.service.CustomerService;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {

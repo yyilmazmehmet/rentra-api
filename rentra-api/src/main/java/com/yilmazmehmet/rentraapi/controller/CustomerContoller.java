@@ -56,7 +56,7 @@ public class CustomerContoller {
 
 		if (!optional.isPresent()) {
 
-			throw new NoSuchEntityFoundException("Customer Id not found" + customerId);
+			throw new NoSuchEntityFoundException("Customer Id not found ->" + customerId);
 
 		} else {
 
@@ -73,7 +73,7 @@ public class CustomerContoller {
 
 		if (!optional.isPresent()) {
 
-			throw new NoSuchEntityFoundException("Customer Id not found" + customerId);
+			throw new NoSuchEntityFoundException("Customer Id not found ->" + customerId);
 
 		} else {
 
