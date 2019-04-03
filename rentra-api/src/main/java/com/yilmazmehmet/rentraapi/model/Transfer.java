@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Data;
  
@@ -61,12 +62,12 @@ public class Transfer implements Serializable{
 	
 	private String description;
 	
-	  
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) // fixed lazy loaded properties having a relationship
 	@ManyToOne(fetch=FetchType.LAZY,optional=false)
 	@JoinColumn(name="customer_id",nullable=false)
 	private Customer customer;
 	
-
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //lazy loaded properties having a relationship
 	@ManyToOne(fetch=FetchType.LAZY,optional=false)
 	@JoinColumn(name="car_id",nullable=false)
 	private Car car;
